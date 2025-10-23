@@ -4,155 +4,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice</title>
+    <title>JavaScript Exercises</title>
     <style>
-        main {
-            width: auto;
-            color: green;
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            padding: 20px;
+            color: #333;
         }
 
+        /* Header */
+        header h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Section styling */
+        section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section headings */
+        section h2 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+
+        /* Exercise outputs */
+        .exercise1_new,
+        .socre,
+        .fizz-buzz,
+        .sum,
+        .exercise5 p,
+        .exercise6 p,
+        .exercise7 p {
+            background-color: #e0f7fa;
+            margin: 5px 0;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Multiplication tables */
         .tables,
         .multi {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            padding: 10px;
+            padding: 10px 0;
         }
 
+        /* Individual table boxes */
         .table-set,
         .multi-set {
             border: 1px solid #ccc;
             border-radius: 6px;
             padding: 8px;
-            background: #f8f8f8;
-            width: 120px;
+            background: #f1f8e9;
+            width: 130px;
+            text-align: center;
+        }
+
+        /* Table rows */
+        .table-set p,
+        .multi-set p {
+            margin: 2px 0;
+            font-size: 0.9rem;
+        }
+
+        .tables h2,
+        .multi h2 {
+            width: 100%;
+            margin-bottom: 10px;
         }
     </style>
-
-    <script>
-        window.onload = function () {
-            //exercise 1 
-            let exercise1 = document.querySelector(".exercise1");
-            function checkNumber(num) {
-                let exercise1New = document.createElement("div");
-                exercise1New.className = "exercise1_new";
-                if (num % 2 === 0) {
-                    let box = document.createElement("p");
-                    box.textContent = ("even")
-                    exercise1New.appendChild(box)
-                }
-
-                else {
-                    let box = document.createElement("p");
-                    box.textContent = ("odd")
-                    exercise1New.appendChild(box)
-                }
-                exercise1.appendChild(exercise1New)
-            }
-            checkNumber(3);
-            checkNumber(10);
-
-            //exercise 2
-            let exercise2 = document.querySelector(".exercise2")
-            function gradeCheck(score) {
-                let newDiv = document.createElement("div")
-                newDiv.className = "socre";
-                let box = document.createElement("p");
-                if (score >= 90) {
-                    box.textContent = "A";
-
-                }
-
-                else if (score >= 80) {
-
-                    box.textContent = "B";
-
-                }
-                else if (score >= 70) {
-
-                    box.textContent = "C";
-
-                }
-                else if (score >= 60) {
-
-                    box.textContent = "D";
-
-                }
-                else {
-
-                    box.textContent = "F";
-
-                }
-                newDiv.appendChild(box)
-                exercise2.appendChild(newDiv)
-            }
-            gradeCheck(40);
-
-            //exercise 3
-            for (let i = 1; i < 30; i++) {
-                if (i % 2 === 0 && i % 5 === 0) console.log("fizz buzz");
-                else if (i % 2 === 0) console.log("fizz");
-                else if (i % 5 === 0) console.log("buzz");
-                else console.log(i);
-            }
-
-            //exercise 4
-            let sum = 0;
-            for (let i = 1; i <= 50; i++) sum += i;
-            console.log("sum:", sum);
-
-            //exercise 5
-            for (let i = 1; i <= 20; i++) if (i % 2 === 0) console.log(i);
-
-            //exercise 6
-            for (let i = 10; i > 0; i--) console.log(i);
-
-            //exercise 7
-            let userInput = 12345;
-            let password = 12345;
-            console.log(userInput === password ? "welcome" : "wrong password");
-
-            //exercise 8: Multiplication tables
-            let tables = document.querySelector(".tables");
-
-            for (let i = 1; i <= 10; i++) {
-                let table = document.createElement("div");
-                table.className = "table-set";
-
-                for (let j = 1; j <= 10; j++) {
-                    let equation = document.createElement("p");
-                    equation.textContent = `${i} x ${j} = ${i * j}`;
-                    table.appendChild(equation);
-                }
-
-                tables.appendChild(table);
-            }
-
-            //exercise 9: Multiplication tables
-            let multi = document.querySelector(".multi");
-
-            for (let i = 0; i <= 20; i++) {
-                let newDiv = document.createElement("div");
-                newDiv.className = "multi-set";
-                for (let j = 1; j <= 20; j++) {
-                    let table = document.createElement("p");
-                    table.textContent = `${i} x ${j} = ${i * j}`;
-                    newDiv.appendChild(table);
-                }
-                multi.appendChild(newDiv)
-            }
-        };
-    </script>
 </head>
 
 <body>
     <header>
-        <h1>JavaScript</h1>
+        <h1>JavaScript Exercises</h1>
     </header>
-    <section class="exercise1"></section>
-    <section class="exercise2"></section>
-    <section class="tables"></section>
-    <section class="multi"></section>
+
+    <!-- Exercise 1 -->
+    <section class="exercise1">
+        <h2>Exercise 1: Even or Odd</h2>
+    </section>
+
+    <!-- Exercise 2 -->
+    <section class="exercise2">
+        <h2>Exercise 2: Grade Check</h2>
+    </section>
+
+    <!-- Exercise 3 -->
+    <section class="exercise3">
+        <h2>Exercise 3: FizzBuzz</h2>
+    </section>
+
+    <!-- Exercise 4 -->
+    <section class="exercise4">
+        <h2>Exercise 4: Sum 1 to 50</h2>
+    </section>
+
+    <!-- Exercise 5 -->
+    <section class="exercise5">
+        <h2>Exercise 5: Even numbers 1-20</h2>
+    </section>
+
+    <!-- Exercise 6 -->
+    <section class="exercise6">
+        <h2>Exercise 6: Countdown 10-1</h2>
+    </section>
+
+    <!-- Exercise 7 -->
+    <section class="exercise7">
+        <h2>Exercise 7: Password Check</h2>
+    </section>
+
+    <!-- Exercise 8 -->
+    <section class="tables">
+        <h2>Exercise 8: Multiplication Tables 1-10</h2>
+
+    </section>
+
+    <!-- Exercise 9 -->
+    <section class="multi">
+        <h2>Exercise 9: Multiplication Tables 1-20</h2>
+
+    </section>
+
+    <script>
+        window.onload = function () {
+            // Exercise 1: Even or Odd
+            let exercise1 = document.querySelector(".exercise1");
+            function checkNumber(num) {
+                let exercise1New = document.createElement("div");
+                exercise1New.className = "exercise1_new";
+
+                let box = document.createElement("p");
+                box.textContent = num % 2 === 0 ? "even" : "odd";
+
+                exercise1New.appendChild(box);
+                exercise1.appendChild(exercise1New);
+            }
+            checkNumber(3);
+            checkNumber(10);
+
+            // Exercise 2: Grade Check
+            let exercise2 = document.querySelector(".exercise2");
+            function gradeCheck(score) {
+                let newDiv = document.createElement("div");
+                newDiv.className = "socre";
+
+                let box = document.createElement("p");
+                if (score >= 90) box.textContent = "A";
+                else if (score >= 80) box.textContent = "B";
+                else if (score >= 70) box.textContent = "C";
+                else if (score >= 60) box.textContent = "D";
+                else box.textContent = "F";
+
+                newDiv.appendChild(box);
+                exercise2.appendChild(newDiv);
+            }
+            gradeCheck(95);
+            gradeCheck(82);
+            gradeCheck(40);
+
+            // Exercise 3: FizzBuzz
+            let exercise3 = document.querySelector(".exercise3");
+            for (let i = 1; i < 30; i++) {
+                let newDiv = document.createElement("div");
+                newDiv.className = "fizz-buzz";
+
+                let box = document.createElement("p");
+                if (i % 2 === 0 && i % 5 === 0) box.textContent = "fizz buzz";
+                else if (i % 2 === 0) box.textContent = "fizz";
+                else if (i % 5 === 0) box.textContent = "buzz";
+                else box.textContent = i;
+
+                newDiv.appendChild(box);
+                exercise3.appendChild(newDiv);
+            }
+
+            // Exercise 4: Sum 1 to 50
+            let sum = 0;
+            let exercise4 = document.querySelector(".exercise4");
+            for (let i = 1; i <= 50; i++) sum += i;
+
+            let boxSum = document.createElement("p");
+            boxSum.textContent = `Sum of numbers from 1 to 50: ${sum}`;
+            exercise4.appendChild(boxSum);
+
+            // Exercise 5: Even numbers 1-20
+            let exercise5 = document.querySelector(".exercise5");
+            for (let i = 1; i <= 20; i++) {
+                if (i % 2 === 0) {
+                    let p = document.createElement("p");
+                    p.textContent = i;
+                    exercise5.appendChild(p);
+                }
+            }
+
+            // Exercise 6: Countdown 10-1
+            let exercise6 = document.querySelector(".exercise6");
+            for (let i = 10; i > 0; i--) {
+                let p = document.createElement("p");
+                p.textContent = i;
+                exercise6.appendChild(p);
+            }
+
+            // Exercise 7: Password Check
+            let userInput = 12345;
+            let password = 12345;
+            let exercise7 = document.querySelector(".exercise7");
+            let pPassword = document.createElement("p");
+            pPassword.textContent = userInput === password ? "welcome" : "wrong password";
+            exercise7.appendChild(pPassword);
+
+            // Exercise 8: Multiplication Tables 1-10
+            let tables = document.querySelector(".tables");
+            for (let i = 1; i <= 10; i++) {
+                let table = document.createElement("div");
+                table.className = "table-set";
+                for (let j = 1; j <= 10; j++) {
+                    let eq = document.createElement("p");
+                    eq.textContent = `${i} x ${j} = ${i * j}`;
+                    table.appendChild(eq);
+                }
+                tables.appendChild(table);
+            }
+
+            // Exercise 9: Multiplication Tables 1-20
+            let multi = document.querySelector(".multi");
+            for (let i = 1; i <= 20; i++) {
+                let newDiv = document.createElement("div");
+                newDiv.className = "multi-set";
+                for (let j = 1; j <= 20; j++) {
+                    let eq = document.createElement("p");
+                    eq.textContent = `${i} x ${j} = ${i * j}`;
+                    newDiv.appendChild(eq);
+                }
+                multi.appendChild(newDiv);
+            }
+        };
+    </script>
 </body>
 
 </html>
