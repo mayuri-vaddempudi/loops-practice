@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <style>
+        main {
+            width: auto;
+            color: green;
+        }
+
+        .tables,
+        .multi {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .table-set,
+        .multi-set {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px;
+            background: #f8f8f8;
+            width: 120px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            //exercise 1 
+            let exercise1 = document.querySelector(".exercise1");
+            function checkNumber(num) {
+                let exercise1New = document.createElement("div");
+                exercise1New.className = "exercise1_new";
+                if (num % 2 === 0) {
+                    let box = document.createElement("p");
+                    box.textContent = ("even")
+                    exercise1New.appendChild(box)
+                }
+
+                else {
+                    let box = document.createElement("p");
+                    box.textContent = ("odd")
+                    exercise1New.appendChild(box)
+                }
+                exercise1.appendChild(exercise1New)
+            }
+            checkNumber(3);
+            checkNumber(10);
+
+            //exercise 2
+            let exercise2 = document.querySelector(".exercise2")
+            function gradeCheck(score) {
+                let newDiv = document.createElement("div")
+                newDiv.className = "socre";
+                let box = document.createElement("p");
+                if (score >= 90) {
+                    box.textContent = "A";
+
+                }
+
+                else if (score >= 80) {
+
+                    box.textContent = "B";
+
+                }
+                else if (score >= 70) {
+
+                    box.textContent = "C";
+
+                }
+                else if (score >= 60) {
+
+                    box.textContent = "D";
+
+                }
+                else {
+
+                    box.textContent = "F";
+
+                }
+                newDiv.appendChild(box)
+                exercise2.appendChild(newDiv)
+            }
+            gradeCheck(40);
+
+            //exercise 3
+            for (let i = 1; i < 30; i++) {
+                if (i % 2 === 0 && i % 5 === 0) console.log("fizz buzz");
+                else if (i % 2 === 0) console.log("fizz");
+                else if (i % 5 === 0) console.log("buzz");
+                else console.log(i);
+            }
+
+            //exercise 4
+            let sum = 0;
+            for (let i = 1; i <= 50; i++) sum += i;
+            console.log("sum:", sum);
+
+            //exercise 5
+            for (let i = 1; i <= 20; i++) if (i % 2 === 0) console.log(i);
+
+            //exercise 6
+            for (let i = 10; i > 0; i--) console.log(i);
+
+            //exercise 7
+            let userInput = 12345;
+            let password = 12345;
+            console.log(userInput === password ? "welcome" : "wrong password");
+
+            //exercise 8: Multiplication tables
+            let tables = document.querySelector(".tables");
+
+            for (let i = 1; i <= 10; i++) {
+                let table = document.createElement("div");
+                table.className = "table-set";
+
+                for (let j = 1; j <= 10; j++) {
+                    let equation = document.createElement("p");
+                    equation.textContent = `${i} x ${j} = ${i * j}`;
+                    table.appendChild(equation);
+                }
+
+                tables.appendChild(table);
+            }
+
+            //exercise 9: Multiplication tables
+            let multi = document.querySelector(".multi");
+
+            for (let i = 0; i <= 20; i++) {
+                let newDiv = document.createElement("div");
+                newDiv.className = "multi-set";
+                for (let j = 1; j <= 20; j++) {
+                    let table = document.createElement("p");
+                    table.textContent = `${i} x ${j} = ${i * j}`;
+                    newDiv.appendChild(table);
+                }
+                multi.appendChild(newDiv)
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>JavaScript</h1>
+    </header>
+    <section class="exercise1"></section>
+    <section class="exercise2"></section>
+    <section class="tables"></section>
+    <section class="multi"></section>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f3f3f3;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .output div {
+            background: #fff;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .tables,
+        .multi {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .table-set,
+        .multi-set {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 8px;
+            background: #e0f7fa;
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Exercises</h1>
+
+    <!-- Exercise 1 -->
+    <section>
+        <h2>Exercise 1: Even or Odd</h2>
+        <div class="exercise1 output"></div>
+    </section>
+
+    <!-- Exercise 2 -->
+    <section>
+        <h2>Exercise 2: Grade Check</h2>
+        <div class="exercise2 output"></div>
+    </section>
+
+    <!-- Exercise 8: 1-10 Multiplication Tables -->
+    <section>
+        <h2>Exercise 8: Multiplication Tables 1-10</h2>
+        <div class="tables"></div>
+    </section>
+
+    <!-- Exercise 9: 1-20 Multiplication Tables -->
+    <section>
+        <h2>Exercise 9: Multiplication Tables 1-20</h2>
+        <div class="multi"></div>
+    </section>
+
+    <script>
+        window.onload = function () {
+            // Exercise 1: Even or Odd
+            let exercise1 = document.querySelector(".exercise1");
+            function checkNumber(num) {
+                let div = document.createElement("div");
+                let p = document.createElement("p");
+                p.textContent = num % 2 === 0 ? "even" : "odd";
+                div.appendChild(p);
+                exercise1.appendChild(div);
+            }
+            checkNumber(3);
+            checkNumber(10);
+
+            // Exercise 2: Grade Check
+            let exercise2 = document.querySelector(".exercise2");
+            function gradeCheck(score) {
+                let div = document.createElement("div");
+                let p = document.createElement("p");
+                if (score >= 90) p.textContent = "A";
+                else if (score >= 80) p.textContent = "B";
+                else if (score >= 70) p.textContent = "C";
+                else if (score >= 60) p.textContent = "D";
+                else p.textContent = "F";
+                div.appendChild(p);
+                exercise2.appendChild(div);
+            }
+            gradeCheck(95);
+            gradeCheck(82);
+            gradeCheck(40);
+
+            // Exercise 8: Multiplication Tables 1-10
+            let tables = document.querySelector(".tables");
+            for (let i = 1; i <= 10; i++) {
+                let div = document.createElement("div");
+                div.className = "table-set";
+                for (let j = 1; j <= 10; j++) {
+                    let p = document.createElement("p");
+                    p.textContent = `${i} x ${j} = ${i * j}`;
+                    div.appendChild(p);
+                }
+                tables.appendChild(div);
+            }
+
+            // Exercise 9: Multiplication Tables 1-20
+            let multi = document.querySelector(".multi");
+            for (let i = 1; i <= 20; i++) {
+                let div = document.createElement("div");
+                div.className = "multi-set";
+                for (let j = 1; j <= 20; j++) {
+                    let p = document.createElement("p");
+                    p.textContent = `${i} x ${j} = ${i * j}`;
+                    div.appendChild(p);
+                }
+                multi.appendChild(div);
+            }
+        };
+    </script>
+</body>
+
+</html>
